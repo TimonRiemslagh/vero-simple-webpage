@@ -10,6 +10,7 @@ body {
 h1, h2, h3 {
     color: rgb(10, 117, 170);
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .title {
@@ -55,7 +56,7 @@ h1::after, h2::after {
 }
 
 .slick-carousel__image {
-    height: 400px;
+    height: 500px;
     background-size: cover;
     background-position: center center;
 }
@@ -73,10 +74,15 @@ h1::after, h2::after {
     margin-bottom: 48px;
 }
 
+.container {
+    overflow: hidden;
+}
+
 strong {
     font-weight: 700;
     color: black;
     position: relative;
+    white-space: nowrap;
 }
 
 strong::after {
@@ -96,9 +102,11 @@ strong::after {
 
 .slick-wrapper {
     margin-bottom: 64px;
+    padding: 10px;
+    background-color: rgba(10, 117, 170, 0.1);
 }
 
-.cta h2 {
+h2 {
     margin-bottom: 24px;
 }
 
@@ -120,6 +128,70 @@ strong::after {
     background-color: rgba(168,22,70, .8);
 }
 
+.slick-next, .slick-prev {
+    color: rgb(10, 117, 170) !important;
+    z-index: 2;
+}
+
+.slick-prev {
+    left: -40px;
+}
+
+.slick-next {
+    right: -40px;
+}
+
+.slick-next::before {
+    display: none;
+}
+
+.slick-prev::before {
+    display: none;
+}
+
+.slick-dots {
+    bottom: -27px;
+}
+
+@media only screen and (max-width: 800px) {
+    .slick-next, .slick-prev {
+        bottom: -35px;
+        top: auto;
+    }
+
+    .slick-next {
+        right: 20px;
+    }
+
+    .slick-prev {
+        left: 20px;
+    }
+
+    .slick-carousel__image {
+        height: 300px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .title, .vero-img, .slick-wrapper {
+        margin-bottom: 24px;
+    }
+
+    .content-wrapper {
+        margin-bottom: 66px;
+    }
+
+    .title__logo {
+        margin-right: 16px;
+    }
+}
+
 @media only screen and (min-width: 800px) {
     .content-wrapper {
         display: flex;
@@ -132,4 +204,6 @@ strong::after {
     .content-wrapper {
         margin-bottom: 48px;
     }
+
+
 }
