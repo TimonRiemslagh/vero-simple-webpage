@@ -1,3 +1,10 @@
+var slides = [
+    "./img/slide1.JPG",
+    "./img/slide2.JPG",
+    "./img/slide3.JPG",
+    "./img/slide4.JPG"
+];
+
 var albums = [
     {
         "title": "Raku",
@@ -40,7 +47,7 @@ function setAlbum($wrapper, album) {
 function setCarousel() {
     var $carousel = $('[data-slick-carousel]');
     $carousel.html('');
-    content["slides"].forEach(function(slide) {
+    slides.forEach(function(slide) {
         var slideHtml = '<div class="slick-carousel__image" style="background-image: url(\'' + slide + '\')" alt=""></div>';
         $carousel.append(slideHtml);
     });
@@ -54,15 +61,15 @@ $(document).ready(function(){
         setAlbum($wrapper, album);
     });
 
-    //setCarousel();
+    setCarousel();
 
-    // $('.slick-carousel').slick({
-    //     dots: true,
-    //     infinite: true,
-    //     arrows: true,
-    //     autoplay: true,
-    //     autoplaySpeed: 2000,
-    //     prevArrow: '<div class="slick-prev slick-arrow"><i class="material-icons">arrow_back_ios</i></div>',
-    //     nextArrow: '<div class="slick-next slick-arrow"><i class="material-icons">arrow_forward_ios</i></div>',
-    // });
+    $('.slick-carousel').slick({
+        dots: true,
+        infinite: true,
+        arrows: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        prevArrow: '<div class="slick-prev slick-arrow"><i class="material-icons">arrow_back_ios</i></div>',
+        nextArrow: '<div class="slick-next slick-arrow"><i class="material-icons">arrow_forward_ios</i></div>',
+    });
 });
