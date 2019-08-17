@@ -100,6 +100,23 @@ strong::after {
     padding: 80px 0;
 }
 
+.blue-background {
+    padding: 10px;
+    background-color: rgba(10, 117, 170, 0.1);
+    display: block;
+}
+
+.image {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.album-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
 .slick-wrapper {
     margin-bottom: 64px;
     padding: 10px;
@@ -204,6 +221,4 @@ h2 {
     .content-wrapper {
         margin-bottom: 48px;
     }
-
-
 }
